@@ -1,0 +1,138 @@
+'''
+•	A class is a user-defined blueprint or prototype from which objects are created.
+•	Class Definition Syntax:
+
+class ClassName:
+# Statement-1
+.
+.
+# Statement-N
+
+•	An Object is an instance of a Class. 
+•	self
+Class methods must have an extra first parameter in the method definition. 
+'''
+
+class Python:   #class creation
+    pass 
+
+p1=Python()    #object creation  or instantiating a class
+p2=Python()
+
+#self
+
+#constructors or init method
+'''
+•	__init__ method is used to initializing the object’s state.
+•	Constructors are used to initializing the object’s state.
+•	Types of constructors :
+1.	default constructor 
+2.	parameterized constructor 
+
+
+def __init__(self):
+    pass
+'''
+
+#destructors
+
+'''
+•	Destructors are called when an object gets destroyed. 
+
+
+def __del__(self):
+    pass
+'''
+
+#example
+class Dog:
+    animal="dog" #class variable 
+    def __init__(self,breed,color):
+        self.breed=breed  #instance variables 
+        self.color=color
+        self.tail=None
+
+    def set_tail(self,tail):  #setter method used to set the values
+        self.tail=tail
+
+    def get_tail(self):     #getter methods used to view the values
+        return self.tail
+
+    def get_breed(self):
+        return self.breed
+
+    def get_color(self):
+        return self.color
+
+D1=Dog("Pug","brown")
+D2=Dog("Bulldog","white")
+
+print("d1 is:",D1.animal)
+#print("d1 is:",D1.breed)
+print(D1.get_breed())
+#print("d1 is:",D1.color)
+print(D1.get_color())
+
+print("d2 is:",D2.animal)
+print("d2 is:",D2.breed)
+print("d2 is:",D2.color)
+
+D1.set_tail(1)
+print(D1.get_tail())
+
+
+#destructors
+#def __del__(self):
+ #   pass
+
+class Employee:
+    def __init__(self):
+        print("emp is created")
+
+    def __del__(self):
+        print("destroys emp")
+
+e=Employee()
+del e
+
+
+'''
+Create methods for the Calculator class that can do the following:
+•	Add two numbers.
+•	Subtract two numbers.
+•	Multiply two numbers.
+•	Divide two numbers.
+
+Examples
+calculator = Calculator()
+
+calculator.add(10, 5) ➞ 15
+
+calculator.subtract(10, 5) ➞ 5
+
+calculator.multiply(10, 5) ➞ 50
+
+calculator.divide(10, 5) ➞ 2
+Notes
+•	The methods should return the result of the calculation.
+
+'''
+
+class Calculator:
+    def add(self,n1,n2):
+        return n1+n2
+
+    def subtract(self,n1,n2):
+        return n1-n2
+
+    def multiply(self,n1,n2):
+        return n1*n2
+
+    def divide(self,n1,n2):
+        return n1/n2
+
+calculator=Calculator()
+print(calculator.add(10,5))
+print(calculator.subtract(10,5))
+print(calculator.multiply(10,5))
+print(calculator.divide(10,5))
