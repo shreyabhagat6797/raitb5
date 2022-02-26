@@ -1,0 +1,131 @@
+'''
+Create a class that takes the following four arguments for a particular football player:
+•	name
+•	age
+•	height
+•	weight
+Also, create three functions for the class that returns the following strings:
+•	get_age() returns "name is age age"
+•	get_height() returns "name is heightcm"
+•	get_weight() returns "name weighs weightkg"
+Examples
+ p1 = Player("David Jones", 25, 175, 75)
+
+ p1.get_age() ➞ "David Jones is age 25"
+ p1.get_height() ➞ "David Jones is 175cm"
+ p1.get_weight() ➞ "David Jones weighs 75kg"
+Notes
+name will be passed in as a string and age, height, weight will be integers.
+'''
+
+
+class Player:
+    def __init__(self,name,age,height,weight):
+        self.name=name
+        self.age=age
+        self.height=height
+        self.weight=weight
+
+    def get_age(self):
+        return "{} is age {}".format(self.name,self.age)
+        #print(self.name," is age ",self.age)
+
+    def get_height(self):
+        return "{} is {}cm".format(self.name,self.height)
+
+    def get_weight(self):
+        return "{} weighs {}kg".format(self.name,self.weight)
+
+p=Player("David Jones", 25, 175, 75)
+print(p.get_age())
+print(p.get_height())
+print(p.get_weight())   
+
+
+'''
+Create a Person class which will have three properties:
+•	Name
+•	List of foods they like
+•	List of foods they hate
+In this class, create the method taste():
+•	It will take in a food name as a string.
+•	Return {person_name} eats the {food_name}.
+•	If the food is in the person's like list, add 'and loves it!' to the end.
+•	If it is in the person's hate list, add 'and hates it!' to the end.
+•	If it is in neither list, simply add an exclamation mark to the end.
+Examples
+p1 = Person("Sam", ["ice cream"], ["carrots"])
+p1.taste("ice cream") ➞ "Sam eats the ice cream and loves it!"
+
+p1.taste("cheese") ➞ "Sam eats the cheese!"
+
+p1.taste("carrots") ➞ "Sam eats the carrots and hates it!"
+Notes
+•	A person can have an empty list for foods they hate and/or love.
+
+
+'''
+
+
+class Person:
+    def __init__(self,name,likes,hates):
+        self.name=name 
+        self.likes=likes
+        self.hates=hates
+
+    def taste(self,food):
+        if food in self.likes:
+            add="and loves it"
+        elif food in self.hates:
+            add="and hates it"
+        else:
+            add=" "
+        return self.name+" eats the "+food+ add+"!"
+
+p=Person("Sam", ["ice cream"],["carrots"])
+print(p.taste("ice cream"))
+print(p.taste("carrots"))
+print(p.taste("cake"))
+
+'''
+Create a class with a couple of functions like these examples.
+•	magic.replace("string", 'char1', char2') 
+is a function that replaces all of the specified characters with another characters.
+
+•	magic.str_length("string") is a function that returns the length of the string.
+
+•	magic.trim(" string ") is a function that returns a string that truncates spaces at both the beginning and end.
+
+•	magic.list_slice(list, tuple) 
+is a function that returns the items in the list that are among the specified indexes. 
+If the length of the new list is 0, return -1.
+
+Examples
+magic.replace("AzErty-QwErty", "E", "e") ➞ "Azerty-Qwerty"
+
+magic.str_length("hello world") ➞ 11
+
+magic.trim("      python is awesome      ") ➞ "python is awesome"
+
+magic.list_slice([1, 2, 3, 4, 5], (2, 4)) ➞ [ 2, 3, 4 ]
+
+'''
+
+class Magic:
+    def replace(self,string,char1,char2):
+        return string.replace(char1,char2)
+
+    def str_length(self,string):
+        return len(string)
+
+    def trim(self,string):
+        return string.strip()
+
+    def list_slice(self,lst,tple):
+        return lst[slice(tple[0]-1,tple[1])]
+
+magic=Magic()
+print(magic.replace("AzErty-QwErty", "E", "e"))
+print(magic.str_length("hello world"))
+print(magic.trim("      python is awesome      "))
+print(magic.list_slice([1, 2, 3, 4, 5], (2, 4)))
