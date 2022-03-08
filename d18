@@ -1,0 +1,44 @@
+
+
+'''
+Royal Orchid is a florist. They want to be alerted when stock of a flower goes below a particular level. 
+The flowers are identified using name, price per kg and stock available (in kgs).
+Write a Python program to implement the above requirement.
+Details of Flower class are given below:
+Class name: Flower
+
+Attributes
+(private)                  flower_name
+                           price_per_kg
+                           stock_available	 
+Methods
+(public)	
+
+__init__()	                        Create and initialize all instance variables to None
+
+validate_flower()	                Return true, if flower name is valid. Else, return false
+                                     (Refer table for valid flower names)
+
+validate_stock(required_quantity)	Accept the quantity required. Return true, if stock is available.
+                                      Else return false.
+
+sell_flower(required_quantity)	    Accept the quantity required.
+                                    Validate flower name and stock.
+                                    If both are valid, update stock available based on the quantity required
+
+check_level()	                    Check if available stock is below the order level
+                                    If so, return true. Else, return false
+                                    (Refer table for order level of each flower)
+
+setter methods	                    Include setter methods for all instance variables to set its values
+getter methods	                    Include getter methods for all instance variables to get its values
+ 
+ 
+Flower Name	  Level(in Kgs)
+Orchid	        15
+Rose	        25
+Jasmine	        40
+Note: Perform case insensitive string comparison
+Represent few flowers, initialize instance variables using setter methods, invoke appropriate methods and test your program.
+
+'''
