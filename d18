@@ -1,3 +1,64 @@
+#abstraction
+
+It is used to hide irrelevant data/class in order to reduce the complexity and enhancement of application efficiency
+python do not provide abstract class
+abstract method can neve be invoked
+
+#from abc import abstractmethod
+ABC is Abstract Base Class.
+ABC is module name
+
+#1
+from abc import ABC,abstractmethod
+
+class Computer(ABC):
+    @abstractmethod
+    def language(self):
+        pass
+
+class Python(Computer):
+    def language(self):
+        print("this is python language")
+
+class Java(Computer):
+    def language(self):
+        print("this ia java language")
+
+p=Python()
+p.language()
+
+j=Java()
+j.language()
+
+
+#2
+from abc import ABC, abstractmethod   
+class Car(ABC):   
+    @abstractmethod
+    def mileage(self):   
+        pass  
+  
+class Tesla(Car):   
+    def mileage(self):   
+        print("The mileage is 30kmph")   
+class Suzuki(Car):   
+    def mileage(self):   
+        print("The mileage is 25kmph ")   
+class Duster(Car):   
+     def mileage(self):   
+          print("The mileage is 24kmph ")   
+
+t= Tesla ()   
+t.mileage()   
+  
+r = Renault()   
+r.mileage()   
+  
+s = Suzuki()   
+s.mileage() 
+
+d = Duster()   
+d.mileage() 
 
 
 '''
