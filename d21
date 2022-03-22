@@ -1,0 +1,82 @@
+Inheritance in python
+•	Inheritance is, a class that inherits all the methods and properties from another class.
+
+•	Properties:
+1.	It represents real-world relationships well. 
+2.	It provides reusability of code.
+3.	It is transitive in nature.
+                
+
+
+•	Types of Inheritance:
+1.	Single Inheritance
+2.	Multiple Inheritance
+3.	Multilevel Inheritance
+4.	Hierarchical Inheritance
+5.	 Hybrid Inheritance
+
+
+#single inheritance
+
+class Parent:
+    def func1(self):
+        print("this is in parent class")
+
+class Child(Parent):
+    def func2(self):
+        print("this is in child class")
+
+c=Child()
+c.func2()
+c.func1()
+
+
+#multiple inheritance
+
+class Mother:
+    mothername=''
+    def mother(self):
+        print(self.mothername)
+
+class Father:
+    fathername=''
+    def father(self):
+        print("Father:",self.fathername)
+
+class Son(Mother,Father):
+    def parent(self):
+        print("father:",self.fathername)
+        print("mother:",self.mothername)
+
+s=Son()
+s.fathername="Abc"
+s.mothername="Xyz"
+s.father()
+s.parent()
+
+
+#multilevel inheritance
+
+class Grandfather:
+    def __init__(self,grandfathername):
+        self.grandfathername=grandfathername
+        
+class Father(Grandfather):
+    def __init__(self,fathername,grandfathername):
+        self.fathername=fathername
+        Grandfather.__init__(self,grandfathername)     #invoking the constructor
+
+class Son(Father):
+    def __init__(self,sonname,fathername,grandfathername):
+        self.sonname=sonname
+        Father.__init__(self,fathername,grandfathername)
+
+    def print1(self):
+        print(self.grandfathername)
+        print(self.fathername)
+        print(self.sonname)
+
+s=Son('c','f','g')
+s.print1()
+
+
