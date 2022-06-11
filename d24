@@ -1,0 +1,133 @@
+class Stack:
+    def __init__(self,max_size):
+        self.__max_size=max_size
+        self.__top=-1
+        self.__elements=[None]*self.__max_size
+
+    def full(self):
+        if self.__top==self.__max_size-1:
+            return True
+        else:
+            return False
+
+    def push(self,data):
+        if self.full():
+            print("stack overflow")
+        else:
+            self.__top+=1
+            self.__elements[self.__top]=data
+
+    def empty(self):
+        if self.__top==-1:
+            return True
+        else:
+            return False
+
+    def pop(self):
+        if self.empty():
+            print("Stack underflow")
+        else:
+            data=self.__elements[self.__top]
+            self.__top-=1
+            return data
+
+    def display(self):
+        if self.empty():
+            print("stack is empty")
+        else:
+            index=self.__top
+            while(index>=0):
+                print(self.__elements[index])
+                index-=1
+
+    def get_max_size(self):
+        return self.__max_size
+
+s=Stack(5)
+s.push("a")
+s.push("b")
+s.push(4)
+s.display()
+
+
+'''
+Given a stack of integers, 
+write a python program that updates the input stack such that all occurrences of the smallest values are at the bottom of the stack, 
+while the order of the other elements remains the same.
+
+For example:
+Input stack (top-bottom) :   5 66  5  8  7
+Output:  66  8  7  5  5
+
+'''
+
+class Stack:
+    def __init__(self,max_size):
+        self.__max_size=max_size
+        self.__top=-1
+        self.__elements=[None]*self.__max_size
+
+    def full(self):
+        if self.__top==self.__max_size-1:
+            return True
+        else:
+            return False
+
+    def push(self,data):
+        if self.full():
+            print("stack overflow")
+        else:
+            self.__top+=1
+            self.__elements[self.__top]=data
+
+    def empty(self):
+        if self.__top==-1:
+            return True
+        else:
+            return False
+
+    def pop(self):
+        if self.empty():
+            print("Stack underflow")
+        else:
+            data=self.__elements[self.__top]
+            self.__top-=1
+            return data
+
+    def display(self):
+        if self.empty():
+            print("stack is empty")
+        else:
+            index=self.__top
+            while(index>=0):
+                print(self.__elements[index])
+                index-=1
+
+    def get_max_size(self):
+        return self.__max_size
+
+def change_smallest_value(number_stack):
+    l=[]
+    while(not number_stack.empty()):
+        l.append(number_stack.pop())
+    minimum=min(l)
+    counter=l.count(min(l))
+    for i in range(counter):
+        number_stack.push(minimum)
+    for element in l[::-1]:
+        if element!=minimum:
+            number_stack.push(element)
+    return number_stack
+
+number_stack=Stack(5)
+number_stack.push(7)
+number_stack.push(8)
+number_stack.push(5)
+number_stack.push(66)
+number_stack.push(5)
+
+print("initial stack:")
+number_stack.display()
+change_smallest_value(number_stack)
+print("after updation:")
+number_stack.display()
